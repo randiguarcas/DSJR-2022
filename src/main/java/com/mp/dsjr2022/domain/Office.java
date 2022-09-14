@@ -4,9 +4,10 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@Table(name="office")
 public class Office implements Serializable {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private Long id;
 
@@ -24,6 +25,15 @@ public class Office implements Serializable {
 
     @Column(name="extra_phone")
     private String extraPhone;
+
+    @Column(name="city_id")
+    private Long cityId;
+
+    @Column(name="status")
+    private Boolean status;
+
+    @Column(name="created_by")
+    private String createdBy;
 
     public Long getId() {
         return id;
@@ -71,5 +81,29 @@ public class Office implements Serializable {
 
     public void setExtraPhone(String extraPhone) {
         this.extraPhone = extraPhone;
+    }
+
+    public Long getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(Long cityId) {
+        this.cityId = cityId;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
     }
 }

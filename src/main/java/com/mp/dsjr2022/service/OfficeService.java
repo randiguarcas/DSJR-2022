@@ -1,7 +1,6 @@
 package com.mp.dsjr2022.service;
 
 import com.mp.dsjr2022.domain.Office;
-
 import java.util.List;
 
 public interface OfficeService {
